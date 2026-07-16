@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-  body { margin: 0; height: 100vh; background: #0f0c29; display: flex; justify-content: center; align-items: center; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
-  #card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); padding: 50px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); text-align: center; color: white; cursor: pointer; transition: 0.5s; }
-  #card:hover { transform: scale(1.05); }
-  h1 { font-size: 3rem; margin-bottom: 10px; }
-  .gift-box { font-size: 80px; }
-  #hidden-content { display: none; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <style>
+        body { 
+            margin: 0; height: 100vh; 
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); 
+            display: flex; justify-content: center; align-items: center; 
+            font-family: 'Inter', sans-serif; color: #fff; 
+        }
+        #main-card { 
+            background: rgba(255, 255, 255, 0.05); 
+            backdrop-filter: blur(20px); 
+            padding: 60px; border-radius: 30px; 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            text-align: center; cursor: pointer; transition: 0.4s;
+        }
+        #main-card:hover { transform: scale(1.02); background: rgba(255, 255, 255, 0.1); }
+        .hidden { display: none; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    </style>
 </head>
-<body>
+<body onclick="showSurprise()">
 
-<div id="card" onclick="openSurprise()">
-  <div id="initial">
-    <div class="gift-box">🎁</div>
-    <h2>Tap to open your Gift</h2>
-  </div>
-  <div id="hidden-content">
-    <h1>Happy Birthday, Ibrahim!</h1>
-    <p>May your day be filled with joy and success.</p>
-    <div style="font-size: 50px;">🎂✨</div>
-  </div>
-</div>
+    <div id="main-card">
+        <div id="gate">
+            <h1>🎁</h1>
+            <p>Tap to reveal your surprise</p>
+        </div>
+        <div id="gift" class="hidden">
+            <h1>Happy Birthday, Ibrahim!</h1>
+            <p>Wishing you a year filled with success and joy.</p>
+        </div>
+    </div>
 
-<audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
 
-<script>
-  function openSurprise() {
-    document.getElementById('initial').style.display = 'none';
-    document.getElementById('hidden-content').style.display = 'block';
-    document.getElementById('music').play();
-    document.body.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
-  }
-</script>
+    <script>
+        function showSurprise() {
+            document.getElementById('gate').style.display = 'none';
+            document.getElementById('gift').style.display = 'block';
+            document.getElementById('music').play();
+        }
+    </script>
 </body>
 </html>
