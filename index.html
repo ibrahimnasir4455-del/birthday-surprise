@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
-<body style="margin:0; padding:0; background:#000; text-align:center;">
-    <img src="birthday.jpg.png" style="max-width:100%; height:auto;">
+<head>
+<style>
+  body { margin:0; padding:0; background:#000; text-align:center; height: 100vh; display: flex; justify-content: center; align-items: center; }
+  img { max-width: 80%; animation: zoom-in 3s infinite alternate; }
+  @keyframes zoom-in {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+</style>
+</head>
+<body>
+  <img src="birthday.jpg.png">
 </body>
 </html>
