@@ -1,16 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-  body { margin:0; padding:0; background:#000; text-align:center; height: 100vh; display: flex; justify-content: center; align-items: center; }
-  img { max-width: 80%; animation: zoom-in 3s infinite alternate; }
-  @keyframes zoom-in {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body { margin: 0; background: #000; color: #fff; font-family: sans-serif; text-align: center; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; }
+        #door { font-size: 100px; cursor: pointer; animation: pulse 2s infinite; }
+        #surprise { display: none; }
+        .cake { font-size: 100px; margin: 10px; }
+        .teddy { font-size: 80px; }
+        .balloon { position: absolute; font-size: 30px; animation: float 5s linear infinite; }
+        @keyframes float { 0% { transform: translateY(100vh); } 100% { transform: translateY(-10vh); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        .confetti { position: absolute; top: 0; font-size: 20px; }
+    </style>
 </head>
-<body>
-  <img src="birthday.jpg.png">
+<body onclick="start()">
+
+    <div id="door">🚪</div>
+    <h2 id="inst">Tap the door to open your surprise!</h2>
+
+    <div id="surprise">
+        <div class="teddy">🧸</div>
+        <div class="cake">🎂</div>
+        <h1>Happy Birthday, Ibrahim!</h1>
+        <p>Sending you lots of love and happiness!</p>
+        <div id="confetti-zone">🎊🎉🎊🎉</div>
+    </div>
+
+    <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+
+    <script>
+        function start() {
+            document.getElementById('door').style.display = 'none';
+            document.getElementById('inst').style.display = 'none';
+            document.getElementById('surprise').style.display = 'block';
+            document.getElementById('music').play();
+            document.body.style.background = "linear-gradient(45deg, #ff9a9e, #fad0c4)";
+            
+            for(let i=0; i<20; i++) {
+                let b = document.createElement('div');
+                b.innerHTML = '🎈'; b.className = 'balloon';
+                b.style.left = Math.random()*100 + 'vw';
+                b.style.animationDelay = Math.random()*5 + 's';
+                document.body.appendChild(b);
+            }
+        }
+    </script>
 </body>
 </html>
