@@ -1,69 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Rija ❤️</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  body { background: #1a0000; color: #fff; text-align: center; font-family: sans-serif; padding: 50px; }
+  .btn { 
+    background: #ff4d4d; color: white; padding: 15px 30px; 
+    border: none; border-radius: 50px; font-size: 20px; 
+    cursor: pointer; margin-top: 20px; display: inline-block;
+  }
+</style>
 </head>
-
 <body>
 
-    <!-- Loading Screen -->
-    <div id="loader">
-        <h1>Preparing Something Special...</h1>
-    </div>
+  <h1>Happy Birthday</h1>
+  <h1>Rija Burney ❤️</h1>
+  <p>Aaj ka din sirf tumhare naam hai... May Allah tumhari har dua qubool kare...</p>
 
-    <!-- Door Section -->
-    <section id="door-section">
+  <button class="btn" onclick="openSurprise()">Continue Surprise ❤️</button>
 
-        <div class="door-container">
+  <div id="hidden" style="display:none; margin-top:30px;">
+    <h2>🎂 Ab asli maza shuru! 🎊</h2>
+    <p>Enjoy your special day!</p>
+  </div>
 
-            <div class="left-door"></div>
+  <script>
+    function openSurprise() {
+      document.getElementById('hidden').style.display = 'block';
+    }
+  </script>
 
-            <div class="right-door"></div>
-
-            <button id="openDoor">
-                🔔 Knock To Open
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- Main Surprise -->
-    <section id="surprise">
-
-        <canvas id="fireworks"></canvas>
-
-        <div id="balloons"></div>
-
-        <h1 class="title">
-            Happy Birthday
-        </h1>
-
-        <h2 class="name">
-            Rija Burney ❤️
-        </h2>
-
-        <div id="cake"></div>
-
-        <div id="message">
-
-        </div>
-
-        <button id="nextBtn">
-            Continue Surprise ❤️
-        </button>
-
-    </section>
- <audio id="music" loop>
-<source src="exactly.mp3" type="audio/mpeg">
- </audio>
-
-<script src="script.js"></script>
 </body>
 </html>
