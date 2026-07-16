@@ -3,47 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Surprise</title>
-    <style>
-        body { 
-            margin: 0; height: 100vh; 
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); 
-            display: flex; justify-content: center; align-items: center; 
-            font-family: 'Inter', sans-serif; color: #fff; 
-        }
-        #main-card { 
-            background: rgba(255, 255, 255, 0.05); 
-            backdrop-filter: blur(20px); 
-            padding: 60px; border-radius: 30px; 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            text-align: center; cursor: pointer; transition: 0.4s;
-        }
-        #main-card:hover { transform: scale(1.02); background: rgba(255, 255, 255, 0.1); }
-        .hidden { display: none; }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    </style>
-</head>
-<body onclick="showSurprise()">
+    <title>Happy Birthday Rija ❤️</title>
 
-    <div id="main-card">
-        <div id="gate">
-            <h1>🎁</h1>
-            <p>Tap to reveal your surprise</p>
-        </div>
-        <div id="gift" class="hidden">
-            <h1>Happy Birthday, Ibrahim!</h1>
-            <p>Wishing you a year filled with success and joy.</p>
-        </div>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <h1>Preparing Something Special...</h1>
     </div>
 
-    <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <!-- Door Section -->
+    <section id="door-section">
 
-    <script>
-        function showSurprise() {
-            document.getElementById('gate').style.display = 'none';
-            document.getElementById('gift').style.display = 'block';
-            document.getElementById('music').play();
-        }
-    </script>
+        <div class="door-container">
+
+            <div class="left-door"></div>
+
+            <div class="right-door"></div>
+
+            <button id="openDoor">
+                🔔 Knock To Open
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Main Surprise -->
+    <section id="surprise">
+
+        <canvas id="fireworks"></canvas>
+
+        <div id="balloons"></div>
+
+        <h1 class="title">
+            Happy Birthday
+        </h1>
+
+        <h2 class="name">
+            Rija Burney ❤️
+        </h2>
+
+        <div id="cake"></div>
+
+        <div id="message">
+
+        </div>
+
+        <button id="nextBtn">
+            Continue Surprise ❤️
+        </button>
+
+    </section>
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
