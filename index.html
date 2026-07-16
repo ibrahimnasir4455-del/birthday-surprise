@@ -10,7 +10,6 @@
 </head>
 <body>
 
-  <!-- Night sky + fairy lights -->
   <div class="sky">
     <div class="stars"></div>
     <div class="fairy-lights">
@@ -20,91 +19,112 @@
       <div class="bulbs" id="bulbs"></div>
     </div>
   </div>
-
-  <!-- Floating balloons -->
   <div class="balloons" id="balloons"></div>
-
-  <!-- Confetti canvas layer -->
   <canvas id="confetti-canvas"></canvas>
 
-  <main class="stage">
-
-    <p class="eyebrow">ek chhoti si surprise party 🎈</p>
-    <h1 class="headline">Happy Birthday, <span id="nameSlot" contenteditable="true" spellcheck="false">Dost</span>!</h1>
-    <p class="subhead" id="subhead">Candles pe tap karo aur bujha do — party shuru karte hain 🕯️</p>
-
-    <!-- CAKE -->
-    <div class="cake-wrap" id="cakeWrap">
-      <svg class="cake" id="cakeSvg" viewBox="0 0 340 320" xmlns="http://www.w3.org/2000/svg">
-        <!-- plate -->
-        <ellipse cx="170" cy="290" rx="140" ry="16" fill="#2a2d55" opacity="0.6"/>
-        <ellipse cx="170" cy="284" rx="150" ry="18" fill="#3a3d6b"/>
-
-        <!-- bottom tier -->
-        <rect x="35" y="205" width="270" height="80" rx="14" fill="#FF6B9D"/>
-        <rect x="35" y="205" width="270" height="18" rx="9" fill="#FFD9E8"/>
-        <!-- drips -->
-        <path d="M35 223 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 v-25 h-270 z" fill="#FFD9E8"/>
-
-        <!-- middle tier -->
-        <rect x="70" y="140" width="200" height="70" rx="12" fill="#FFC857"/>
-        <rect x="70" y="140" width="200" height="16" rx="8" fill="#FFE8B0"/>
-        <path d="M70 156 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 v-20 h-200 z" fill="#FFE8B0"/>
-
-        <!-- top tier -->
-        <rect x="105" y="90" width="130" height="55" rx="10" fill="#8E7CFF"/>
-        <rect x="105" y="90" width="130" height="14" rx="7" fill="#D7CFFF"/>
-
-        <!-- sprinkles -->
-        <g id="sprinkles" fill="#FDF6E3"></g>
-
-        <!-- candles group -->
-        <g id="candles">
-          <g class="candle" data-lit="true">
-            <rect x="140" y="55" width="10" height="35" rx="3" fill="#FDF6E3"/>
-            <rect x="140" y="55" width="10" height="35" rx="3" fill="url(#stripe)"/>
-            <g class="flame-group">
-              <ellipse class="flame" cx="145" cy="48" rx="6" ry="10" fill="#FFC857"/>
-              <ellipse class="flame-core" cx="145" cy="50" rx="3" ry="5" fill="#FFF3D6"/>
-            </g>
-          </g>
-          <g class="candle" data-lit="true">
-            <rect x="165" y="45" width="10" height="45" rx="3" fill="#FDF6E3"/>
-            <rect x="165" y="45" width="10" height="45" rx="3" fill="url(#stripe)"/>
-            <g class="flame-group">
-              <ellipse class="flame" cx="170" cy="38" rx="6" ry="10" fill="#FFC857"/>
-              <ellipse class="flame-core" cx="170" cy="40" rx="3" ry="5" fill="#FFF3D6"/>
-            </g>
-          </g>
-          <g class="candle" data-lit="true">
-            <rect x="190" y="55" width="10" height="35" rx="3" fill="#FDF6E3"/>
-            <rect x="190" y="55" width="10" height="35" rx="3" fill="url(#stripe)"/>
-            <g class="flame-group">
-              <ellipse class="flame" cx="195" cy="48" rx="6" ry="10" fill="#FFC857"/>
-              <ellipse class="flame-core" cx="195" cy="50" rx="3" ry="5" fill="#FFF3D6"/>
-            </g>
-          </g>
-        </g>
-
-        <defs>
-          <pattern id="stripe" width="10" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
-            <rect width="10" height="4" fill="#FF6B9D" opacity="0.5"/>
-          </pattern>
-        </defs>
-      </svg>
-      <div class="tap-hint" id="tapHint">candles ko tap karo 👆</div>
-    </div>
-
-    <!-- Reveal panel: photo + message, hidden until candles blown -->
-    <section class="reveal" id="reveal">
-      <div class="photo-frame">
-        <img src="birthday.jpg.png" alt="Birthday photo" id="photo">
+  <section class="scene door-scene" id="doorScene">
+    <p class="eyebrow">koi darwaze pe hai...</p>
+    <h1 class="headline small">Ek Surprise Tumhara Intezaar Kar Raha Hai</h1>
+    <div class="door-frame" id="doorFrame">
+      <div class="door-panel left" id="doorLeft">
+        <div class="panel-inset"></div>
+        <div class="knob"></div>
       </div>
-      <p class="handwritten" id="message">Tumhare din ki tarah tum bhi khaas ho. Bohat bohat mubarak ho ye birthday — hansi, khushi aur pyaar se bhara rahe saal! 🎂💛</p>
-      <button class="replay-btn" id="replayBtn">Dobara Celebrate Karo 🔁</button>
-    </section>
+      <div class="door-panel right" id="doorRight">
+        <div class="panel-inset"></div>
+        <div class="knob"></div>
+      </div>
+      <div class="door-glow"></div>
+    </div>
+    <p class="tap-hint" id="knockHint">darwaza khatkhatao 👊 (3 baar tap karo)</p>
+  </section>
 
-  </main>
+  <section class="scene party-scene" id="partyScene">
+    <p class="eyebrow">surprise party 🎈</p>
+    <h1 class="headline">Happy Birthday, <span id="nameSlot" contenteditable="true" spellcheck="false">Dost</span>!</h1>
+    <p class="subhead" id="subhead">Candles pe tap karo aur bujha do — wish maango 🕯️</p>
+
+    <div class="cake-stage">
+      <div class="cake-wrap" id="cakeWrap">
+        <svg class="cake" id="cakeSvg" viewBox="0 0 340 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gPink" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FF8FB8"/>
+              <stop offset="100%" stop-color="#E84C86"/>
+            </linearGradient>
+            <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFDA8A"/>
+              <stop offset="100%" stop-color="#F5A93B"/>
+            </linearGradient>
+            <linearGradient id="gViolet" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#B0A2FF"/>
+              <stop offset="100%" stop-color="#7259E8"/>
+            </linearGradient>
+            <radialGradient id="plateShine" cx="50%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#4a4e82"/>
+              <stop offset="100%" stop-color="#2a2d55"/>
+            </radialGradient>
+            <pattern id="stripe" width="10" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+              <rect width="10" height="4" fill="#FF6B9D" opacity="0.5"/>
+            </pattern>
+          </defs>
+
+          <ellipse cx="170" cy="292" rx="145" ry="14" fill="#000" opacity="0.25"/>
+          <ellipse cx="170" cy="284" rx="150" ry="18" fill="url(#plateShine)"/>
+
+          <rect x="35" y="205" width="270" height="80" rx="14" fill="url(#gPink)"/>
+          <rect x="35" y="205" width="270" height="18" rx="9" fill="#FFD9E8"/>
+          <path d="M35 223 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 q10 20 20 0 v-25 h-270 z" fill="#FFD9E8"/>
+
+          <rect x="70" y="140" width="200" height="70" rx="12" fill="url(#gGold)"/>
+          <rect x="70" y="140" width="200" height="16" rx="8" fill="#FFE8B0"/>
+          <path d="M70 156 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 q9 18 18 0 v-20 h-200 z" fill="#FFE8B0"/>
+
+          <rect x="105" y="90" width="130" height="55" rx="10" fill="url(#gViolet)"/>
+          <rect x="105" y="90" width="130" height="14" rx="7" fill="#D7CFFF"/>
+
+          <g id="sprinkles" fill="#FDF6E3"></g>
+
+          <g id="candles">
+            <g class="candle" data-lit="true">
+              <rect x="140" y="55" width="10" height="35" rx="3" fill="#FDF6E3"/>
+              <rect x="140" y="55" width="10" height="35" rx="3" fill="url(#stripe)"/>
+              <g class="flame-group">
+                <ellipse class="flame" cx="145" cy="48" rx="6" ry="10" fill="#FFC857"/>
+                <ellipse class="flame-core" cx="145" cy="50" rx="3" ry="5" fill="#FFF3D6"/>
+              </g>
+            </g>
+            <g class="candle" data-lit="true">
+              <rect x="165" y="45" width="10" height="45" rx="3" fill="#FDF6E3"/>
+              <rect x="165" y="45" width="10" height="45" rx="3" fill="url(#stripe)"/>
+              <g class="flame-group">
+                <ellipse class="flame" cx="170" cy="38" rx="6" ry="10" fill="#FFC857"/>
+                <ellipse class="flame-core" cx="170" cy="40" rx="3" ry="5" fill="#FFF3D6"/>
+              </g>
+            </g>
+            <g class="candle" data-lit="true">
+              <rect x="190" y="55" width="10" height="35" rx="3" fill="#FDF6E3"/>
+              <rect x="190" y="55" width="10" height="35" rx="3" fill="url(#stripe)"/>
+              <g class="flame-group">
+                <ellipse class="flame" cx="195" cy="48" rx="6" ry="10" fill="#FFC857"/>
+                <ellipse class="flame-core" cx="195" cy="50" rx="3" ry="5" fill="#FFF3D6"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <div class="tap-hint" id="tapHint">candles ko tap karo 👆</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene message-scene" id="messageScene">
+    <div class="photo-frame">
+      <img src="birthday.jpg.png" alt="Birthday photo" id="photo">
+    </div>
+    <p class="handwritten" id="message">Tumhare din ki tarah tum bhi khaas ho. Bohat bohat mubarak ho ye birthday — hansi, khushi aur pyaar se bhara rahe saal! 🎂💛</p>
+    <p class="signature">From, <span id="fromSlot" contenteditable="true" spellcheck="false">Ibrahim</span> ❤️</p>
+    <button class="replay-btn" id="replayBtn">Dobara Celebrate Karo 🔁</button>
+  </section>
 
   <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
   <audio id="blowSound" src="exactly.mp3" preload="auto"></audio>
