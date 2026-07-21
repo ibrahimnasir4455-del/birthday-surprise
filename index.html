@@ -1,85 +1,89 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html>
 <head>
-<meta charset="UTF-8">
+
+<title>Happy Birthday Rija ❤️</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-  <!-- floating petals live here -->
-  <div class="petals" id="petals"></div>
+<div id="loader">
+    <h1>A Special Surprise Is Waiting... ✨</h1>
+</div>
 
-  <!-- ===== SCENE 1: DOOR ===== -->
-  <section class="scene door-scene" id="doorScene">
-    <p class="eyebrow">Ek Surprise Tumhara Intezaar Kar Raha Hai</p>
 
-    <div class="door-frame" id="doorFrame">
-      <div class="door door-left">
-        <span class="handle"></span>
-      </div>
-      <div class="door door-right">
-        <span class="handle"></span>
-      </div>
-      <div class="door-glow"></div>
-      <div class="door-sill"></div>
-    </div>
+<div class="door-screen" id="doorScreen">
 
-    <button class="cta-btn" id="openDoorBtn">Darwaza Kholo</button>
-  </section>
+<div class="door left"></div>
+<div class="door right"></div>
 
-  <!-- ===== SCENE 2: CAKE ===== -->
-  <section class="scene cake-scene" id="cakeScene">
-    <p class="eyebrow">Aaj Ka Din Khaas Hai</p>
-    <h1 class="birthday-title">Happy Birthday<br><span class="name" id="bdayName">Naam Yahan Likhein</span></h1>
 
-    <div class="cake-wrap" id="cakeWrap">
-      <div class="knife" id="knife"></div>
+<button id="openDoor">
+🔔 Knock To Open
+</button>
 
-      <div class="cake" id="cake">
-        <div class="cake-half cake-left">
-          <div class="candle c1"><span class="flame"></span></div>
-          <div class="candle c2"><span class="flame"></span></div>
-          <div class="tier tier-top"></div>
-          <div class="tier tier-mid"></div>
-          <div class="tier tier-bottom"></div>
-        </div>
-        <div class="cake-half cake-right">
-          <div class="candle c3"><span class="flame"></span></div>
-          <div class="tier tier-top"></div>
-          <div class="tier tier-mid"></div>
-          <div class="tier tier-bottom"></div>
-        </div>
-        <div class="plate"></div>
-      </div>
+</div>
 
-      <div class="flower f1"></div>
-      <div class="flower f2"></div>
-      <div class="flower f3"></div>
-      <div class="flower f4"></div>
-    </div>
 
-    <button class="cta-btn" id="cutCakeBtn">Cake Kaato 🔪</button>
 
-    <div class="message-card" id="messageCard">
-      <div class="photo-frame">
-        <img src="birthday.jpg.png" alt="Birthday" class="bday-photo" onerror="this.parentElement.style.display='none'">
-      </div>
-      <p class="wish-text" id="wishText">
-        Muskurahaton bhari zindagi, khushiyon se bhara har din,
-        aur har khwahish poori ho — Happy Birthday!
-      </p>
-      <button class="music-btn" id="musicBtn">🎵 Gaana Bajao</button>
-    </div>
-  </section>
+<section id="birthday" class="hidden">
 
-  <div class="confetti-layer" id="confettiLayer"></div>
 
-  <audio id="bgMusic" src="music.mp3" loop preload="none"></audio>
+<h1>
+🎉 Happy Birthday Rija Burney ❤️
+</h1>
 
-  <script src="script.js"></script>
+
+<div class="cake">
+🎂
+</div>
+
+
+<p id="message">
+May your life always shine with happiness...
+May every dream of yours come true...
+You are a very special person... ✨
+</p>
+
+
+<button id="heartBtn">
+Open My Heart ❤️
+</button>
+
+
+<div id="letter" class="hidden">
+
+<h2>💌 A Special Message</h2>
+
+<p>
+Dear Rija...
+
+On your special day I just want to say...
+May your smile always stay beautiful...
+May happiness always find you...
+
+Happy Birthday ❤️✨
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<audio id="music">
+<source src="exactly.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
